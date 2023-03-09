@@ -1,0 +1,14 @@
+    //пример использования
+
+    QVector<double> xdata, ydata;
+    for (int i = 0; i < values.size(); i++) {
+        xdata.push_back(values.x());
+        ydata.push_back(values.y());
+    }
+
+    if (!plot->setData(xdata, ydata, 1)) {
+        plot->addGraph();
+        plot->setLineWidth(plot->getGraphCount()-1, 3);
+        plot->setData(xdata, ydata, 1);
+    }
+    plot->show();
